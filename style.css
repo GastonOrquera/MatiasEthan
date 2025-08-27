@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=WDXL+Lubrifont+TC&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-green: #00C967;
+    --color-black: rgb(8, 8, 8);
+    --font-primary: "Roboto", sans-serif;
+    --font-secondary: "WDXL Lubrifont TC", sans-serif;
+}
+
+header {
+    background-color: var(--color-black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 3.6rem;
+    font-family: var(--font-primary);
+    border-bottom: 1px solid var(--color-green);
+    position: fixed;
+
+    width: 100%;
+}
+
+.logo {
+    background-image: url(./images/logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 8rem;
+    width: 8rem;
+}
+
+header nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1px;
+}
+
+header nav ul li .btn {
+    background-color: #00C967;
+    padding: .6rem 1.4rem;
+    color: black;
+    text-transform: uppercase;
+    border-radius: .4rem;
+
+}
+
+header nav ul li a:hover {
+    color: var(--color-green);
+}
+
+header nav ul li .btn:hover {
+    color: var(--color-black);
+}
+
+/* Final header */
+
+/* Seccion main inicio */
+
+.conteinerMain {
+    background-color: black;
+    height: max-content;
+    padding-top: 9rem;
+    padding-bottom: 4rem;
+}
+
+.conteinerMain .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteinerMain .box h4 {
+
+    margin-top: 3rem;
+    text-align: center;
+    width: max-content;
+    background-color: var(--color-black);
+    border: 1px solid var(--color-green);
+    padding: .8rem 2.2rem;
+    color: var(--color-green);
+    font-family: var(--font-secondary);
+    letter-spacing: 2px;
+    border-radius: .6rem;
+    box-shadow: 0px 0px 6px 0px var(--color-green);
+}
+
+.conteinerMain .box h1 {
+    color: var(--color-green);
+    font-family: var(--font-secondary);
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2.6rem;
+    letter-spacing: 1px;
+}
+
+.conteinerMain .box p {
+    color: white;
+    font-family: var(--font-primary);
+    margin-top: 1.8rem;
+
+    span {
+        color: var(--color-green);
+        text-decoration: underline var(--color-green);
+    }
+}
+
+/* video */
+
+video {
+    width: 40rem;
+    height: 30rem;
+    margin-top: 2rem;
+}
+
+/* Botón de play/pause */
+video::-webkit-media-controls-play-button {
+    margin-right: 1rem;
+}
+
+/* Texto del tiempo actual */
+video::-webkit-media-controls-current-time-display {
+    color: #f1faee;
+    font-weight: bold;
+}
+
+/* Texto del tiempo total */
+video::-webkit-media-controls-time-remaining-display {
+    color: #a8dadc;
+}
+
+/* Barra de progreso */
+video::-webkit-media-controls-timeline {
+    background-color: var(--color-green);
+    padding: 1rem;
+}
+
+/* Barra de volumen */
+video::-webkit-media-controls-volume-slider {
+    color: var(--color-green);
+}
