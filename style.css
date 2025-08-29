@@ -7,8 +7,12 @@
 }
 
 :root {
-    --color-green: #00C967;
+    /* --color-green: #00C967; */
+    /* --color-blue: rgb(73, 73, 247); */
+    --color-blue: rgb(68, 68, 243);
     --color-black: rgb(8, 8, 8);
+    --bg-black: #131313;
+    /* --bg-black: #050505; */
     --font-primary: "Roboto", sans-serif;
     --font-secondary: "WDXL Lubrifont TC", sans-serif;
 }
@@ -20,10 +24,9 @@ header {
     align-items: center;
     padding-right: 3.6rem;
     font-family: var(--font-primary);
-    border-bottom: 1px solid var(--color-green);
-    position: fixed;
-
-    width: 100%;
+    border-bottom: 1px solid var(--color-blue);
+    /* position: fixed;
+    width: 100%; */
 }
 
 .logo {
@@ -46,24 +49,32 @@ header nav ul li {
 header nav ul li a {
     text-decoration: none;
     color: white;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    /* text-transform: uppercase; */
 }
 
 header nav ul li .btn {
-    background-color: #00C967;
+    background-color: var(--color-blue);
     padding: .6rem 1.4rem;
-    color: black;
-    text-transform: uppercase;
     border-radius: .4rem;
-
+    border: 1px solid transparent;
+    letter-spacing: 1px;
 }
 
 header nav ul li a:hover {
-    color: var(--color-green);
+    color: var(--color-blue);
 }
 
-header nav ul li .btn:hover {
-    color: var(--color-black);
+.btn:hover {
+    transition: .4s ease-in-out;
+    border: 1px solid white;
+    letter-spacing: 2px;
+    color: white;
+    box-shadow: 0px 0px 14px var(--color-blue);
+}
+
+.hamburger {
+    display: none;
 }
 
 /* Final header */
@@ -71,10 +82,18 @@ header nav ul li .btn:hover {
 /* Seccion main inicio */
 
 .conteinerMain {
-    background-color: black;
+    /* background-color: black; */
     height: max-content;
-    padding-top: 9rem;
-    padding-bottom: 4rem;
+    background-image: url(./images/gradient_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box-black {
+    background-color: #131313ea;
+    padding: 2rem;
+
+    /* background-color: var(--bg-black); */
 }
 
 .conteinerMain .box {
@@ -84,46 +103,92 @@ header nav ul li .btn:hover {
 }
 
 .conteinerMain .box h4 {
-
     margin-top: 3rem;
     text-align: center;
-    width: max-content;
     background-color: var(--color-black);
-    border: 1px solid var(--color-green);
+    border: 1px solid var(--color-blue);
     padding: .8rem 2.2rem;
-    color: var(--color-green);
+    /* color: var(--color-blue); */
+    color: rgb(221, 221, 221);
+    font-weight: 600;
     font-family: var(--font-secondary);
     letter-spacing: 2px;
     border-radius: .6rem;
-    box-shadow: 0px 0px 6px 0px var(--color-green);
+    box-shadow: 0px 0px 6px 0px var(--color-blue);
 }
 
 .conteinerMain .box h1 {
-    color: var(--color-green);
-    font-family: var(--font-secondary);
+    color: var(--color-blue);
+    font-family: var(--font-primary);
+    text-shadow: 0px 0px 14px var(--color-blue);
     text-align: center;
     margin-top: 2rem;
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     letter-spacing: 1px;
 }
 
 .conteinerMain .box p {
     color: white;
     font-family: var(--font-primary);
+
     margin-top: 1.8rem;
 
     span {
-        color: var(--color-green);
-        text-decoration: underline var(--color-green);
+        color: var(--color-blue);
+        text-decoration: underline var(--color-blue);
     }
+}
+
+/* Shadow prueba */
+
+.shadow {
+    width: 40rem;
+    height: 30rem;
+    position: absolute;
+
+    left: -20rem;
+    /* background-color: var(--color-blue); */
+
+    background: radial-gradient(circle,
+            var(--color-blue),
+            /* centro intenso */
+            transparent 80%
+            /* se desvanece */
+        );
+    filter: blur(100px);
+    opacity: 0.2;
+}
+
+.shadowTwo {
+    top: 30%;
+    left: 90rem;
+    background-color: var(--color-blue);
+    opacity: 0.1;
 }
 
 /* video */
 
+.conteiner-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.video {
+    background-color: var(--bg-black);
+
+    width: max-content;
+    border-radius: 1rem;
+    padding: 0 2rem;
+    padding-bottom: 2.6rem;
+}
+
 video {
-    width: 40rem;
-    height: 30rem;
+    width: 60rem;
+    height: 34rem;
     margin-top: 2rem;
+    border-radius: 1rem;
 }
 
 /* Botón de play/pause */
@@ -144,11 +209,109 @@ video::-webkit-media-controls-time-remaining-display {
 
 /* Barra de progreso */
 video::-webkit-media-controls-timeline {
-    background-color: var(--color-green);
+    background-color: var(--color-blue);
     padding: 1rem;
 }
 
 /* Barra de volumen */
 video::-webkit-media-controls-volume-slider {
-    color: var(--color-green);
+    color: var(--color-blue);
+}
+
+
+/* Responsive */
+
+@media only screen and (max-width: 1200px) {
+    header {
+        padding-right: 1rem;
+
+        nav {
+            display: none;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: .2rem;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            div {
+                height: 2px;
+                width: 18px;
+                background-color: white;
+            }
+        }
+
+        nav.active {
+            display: flex;
+            position: absolute;
+            top: 8.1rem;
+            width: 100%;
+            padding: 1rem;
+            background-color: white;
+
+            ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            a {
+                color: var(--color-black);
+            }
+
+        }
+
+
+        .hamburger:hover div {
+            transition: .2s ease-in-out;
+            background-color: var(--color-blue);
+        }
+    }
+
+    /* Final header */
+
+    .conteinerMain .box-black {
+        padding: 1rem;
+        height: 100vh;
+    }
+
+    .conteinerMain .box h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .conteinerMain .box h4 {
+        font-size: .9rem;
+        letter-spacing: 1px;
+    }
+
+    .conteinerMain .box p {
+        text-align: center;
+        font-size: .9rem;
+    }
+
+    /* shadow */
+    .shadow {
+        display: none;
+    }
+
+    /* video main */
+
+    video {
+        width: 100%;
+        height: min-content;
+    }
+
+    .video {
+        padding-bottom: 2rem;
+    }
+
+    /* video {
+        width: 60rem;
+        height: 34rem;
+        margin-top: 2rem;
+        border-radius: 1rem;
+    } */
 }
