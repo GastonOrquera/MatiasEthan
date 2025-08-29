@@ -20,11 +20,11 @@ let nav = document.querySelector('nav');
 let navAll = document.querySelectorAll('a');
 
 hamburger.addEventListener('click', () => {
-    nav.classList.add('active');
-
-
+    nav.classList.toggle('active');
+    navAll.forEach(function (a) {
+        a.classList.toggle('active');
+    });
 });
-
 
 
 
