@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=WDXL+Lubrifont+TC&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
 * {
     box-sizing: border-box;
@@ -22,19 +23,26 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 3.6rem;
+    padding: 2rem;
     font-family: var(--font-primary);
     border-bottom: 1px solid var(--color-blue);
     /* position: fixed;
     width: 100%; */
 }
 
-.logo {
+/* .logo {
     background-image: url(./images/logo.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 8rem;
     width: 8rem;
+} */
+
+.logo {
+    color: var(--color-blue);
+    text-decoration: none;
+    font-family: var(--font-secondary);
+    font-size: 2.6rem;
 }
 
 header nav ul {
@@ -91,7 +99,10 @@ header nav ul li a:hover {
 
 .box-black {
     background-color: #131313ea;
+    overflow: hidden;
     padding: 2rem;
+    position: relative;
+
 
     /* background-color: var(--bg-black); */
 }
@@ -172,8 +183,56 @@ header nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     margin-top: 4rem;
 }
+
+.box-people {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: .6rem;
+    padding: 1rem 2rem;
+    border-left: 1px solid var(--color-blue);
+    border-right: 1px solid var(--color-blue);
+
+    .image-people {
+        height: 3rem;
+    }
+
+    p {
+        color: white;
+        font-family: var(--font-secondary);
+        letter-spacing: 2px;
+        font-size: 1.1rem;
+    }
+}
+
+.btn-asesor {
+    text-decoration: none;
+    background-color: #58A418;
+    color: white;
+    font-family: var(--font-secondary);
+    padding: 1.2rem 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    border-radius: .4rem;
+    box-shadow: 0px 0px 15px #58A418;
+    margin-top: 2rem;
+    text-transform: uppercase;
+}
+
+.btn-asesor:hover {
+    transform: scale(1.05);
+    transition: .5s ease-in-out;
+}
+
+
 
 .video {
     background-color: var(--bg-black);
@@ -184,46 +243,46 @@ header nav ul li a:hover {
     padding-bottom: 2.6rem;
 }
 
+.video:hover {
+    transition: 1s ease-in-out;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 255, 0.219);
+}
+
 video {
     width: 60rem;
     height: 34rem;
     margin-top: 2rem;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
-/* Botón de play/pause */
 video::-webkit-media-controls-play-button {
     margin-right: 1rem;
 }
 
-/* Texto del tiempo actual */
 video::-webkit-media-controls-current-time-display {
     color: #f1faee;
     font-weight: bold;
 }
 
-/* Texto del tiempo total */
 video::-webkit-media-controls-time-remaining-display {
     color: #a8dadc;
 }
 
-/* Barra de progreso */
 video::-webkit-media-controls-timeline {
     background-color: var(--color-blue);
     padding: 1rem;
 }
 
-/* Barra de volumen */
 video::-webkit-media-controls-volume-slider {
     color: var(--color-blue);
 }
-
 
 /* Responsive */
 
 @media only screen and (max-width: 1200px) {
     header {
-        padding-right: 1rem;
+        padding: 1rem;
 
         nav {
             display: none;
@@ -247,10 +306,12 @@ video::-webkit-media-controls-volume-slider {
         nav.active {
             display: flex;
             position: absolute;
-            top: 8.1rem;
+            top: 5.2rem;
             width: 100%;
+            left: 0;
             padding: 2rem 1rem;
             background-color: white;
+            z-index: 1;
 
             ul {
                 flex-direction: column;
@@ -293,14 +354,14 @@ video::-webkit-media-controls-volume-slider {
     }
 
     /* shadow */
-    .shadow {
+    /* .shadow {
         display: none;
-    }
+    } */
 
     /* video main */
 
     video {
-        width: 100%;
+
         height: min-content;
     }
 
@@ -314,4 +375,19 @@ video::-webkit-media-controls-volume-slider {
         margin-top: 2rem;
         border-radius: 1rem;
     } */
+}
+
+
+@media only screen and (max-width: 1070px) {
+
+    .video {
+        width: 100%;
+    }
+
+    video {
+        width: 100%;
+
+    }
+
+
 }
